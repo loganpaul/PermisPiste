@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/permispiste</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="metier.Activite"/>
+    <mapping class="metier.Client"/>
+    <mapping class="metier.Emplacement"/>
+    <mapping class="metier.Sejour"/>
+    <mapping class="metier.Sport"/>
+    <mapping class="metier.TypeEmplacement"/>
+    <mapping class="metier.Action"/>
+    <mapping class="metier.Appartient"/>
+    <mapping class="metier.Apprenant"/>
+    <mapping class="metier.Calendrier"/>
+    <mapping class="metier.EstAssocie"/>
+    <mapping class="metier.Fixe"/>
+    <mapping class="metier.Indicateur"/>
+    <mapping class="metier.Jeu"/>
+    <mapping class="metier.Mission"/>
+    <mapping class="metier.Objectif"/>
+    <mapping class="metier.Obtient"/>
+    <mapping class="metier.Possede"/>
+    <mapping class="metier.Regle"/>
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
