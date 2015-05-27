@@ -1,0 +1,14 @@
+#Git ignore file
+
+*.class
+
+#Eclipse
+.project
+.settings
+.classpath
+.metadata
+
+#IntelliJ
+.idea
+*.iml
+target
