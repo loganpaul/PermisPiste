@@ -95,7 +95,7 @@ public class Action {
         this.actionByActNumaction = actionByActNumaction;
     }
 
-    @OneToMany(mappedBy = "actionByActNumaction")
+    @OneToMany(mappedBy = "actionByActNumaction", cascade=CascadeType.ALL)
     public Collection<Action> getActionsByNumaction() {
         return actionsByNumaction;
     }
@@ -104,7 +104,7 @@ public class Action {
         this.actionsByNumaction = actionsByNumaction;
     }
 
-    @OneToMany(mappedBy = "actionByNumaction")
+    @OneToMany(mappedBy = "actionByNumaction", cascade=CascadeType.ALL)
     public Collection<Appartient> getAppartientsByNumaction() {
         return appartientsByNumaction;
     }
@@ -113,7 +113,7 @@ public class Action {
         this.appartientsByNumaction = appartientsByNumaction;
     }
 
-    @OneToMany(mappedBy = "actionByNumaction")
+    @OneToMany(mappedBy = "actionByNumaction", cascade=CascadeType.ALL)
     public Collection<EstAssocie> getEstAssociesByNumaction() {
         return estAssociesByNumaction;
     }
@@ -122,7 +122,7 @@ public class Action {
         this.estAssociesByNumaction = estAssociesByNumaction;
     }
 
-    @OneToMany(mappedBy = "actionByNumaction")
+    @OneToMany(mappedBy = "actionByNumaction", cascade=CascadeType.ALL)
     public Collection<Indicateur> getIndicateursByNumaction() {
         return indicateursByNumaction;
     }
@@ -131,7 +131,7 @@ public class Action {
         this.indicateursByNumaction = indicateursByNumaction;
     }
 
-    @OneToMany(mappedBy = "actionByNumaction")
+    @OneToMany(mappedBy = "actionByNumaction", cascade=CascadeType.ALL)
     public Collection<Obtient> getObtientsByNumaction() {
         return obtientsByNumaction;
     }
@@ -140,7 +140,7 @@ public class Action {
         this.obtientsByNumaction = obtientsByNumaction;
     }
 
-    @OneToMany(mappedBy = "actionByNumaction")
+    @OneToMany(mappedBy = "actionByNumaction", cascade=CascadeType.ALL)
     public Collection<Possede> getPossedesByNumaction() {
         return possedesByNumaction;
     }
