@@ -1,10 +1,6 @@
 package modele;
 
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Pierre on 27/05/2015.
@@ -15,6 +11,7 @@ public class Indicateur {
     private int numaction;
     private String libindic;
     private Integer poids;
+    private Action actionByNumaction;
 
     @Id
     @Column(name = "NUMINDIC")
@@ -78,5 +75,15 @@ public class Indicateur {
         result = 31 * result + (libindic != null ? libindic.hashCode() : 0);
         result = 31 * result + (poids != null ? poids.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", nullable = false)
+    public Action getActionByNumaction() {
+        return actionByNumaction;
+    }
+
+    public void setActionByNumaction(Action actionByNumaction) {
+        this.actionByNumaction = actionByNumaction;
     }
 }

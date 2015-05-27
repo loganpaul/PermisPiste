@@ -1,10 +1,7 @@
 package modele;
 
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Pierre on 27/05/2015.
@@ -13,6 +10,8 @@ import javax.persistence.Id;
 public class Objectif {
     private int numobjectif;
     private String libobectif;
+    private Collection<EstAssocie> estAssociesByNumobjectif;
+    private Collection<Fixe> fixesByNumobjectif;
 
     @Id
     @Column(name = "NUMOBJECTIF")
@@ -52,5 +51,23 @@ public class Objectif {
         int result = numobjectif;
         result = 31 * result + (libobectif != null ? libobectif.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "objectifByNumobjectif")
+    public Collection<EstAssocie> getEstAssociesByNumobjectif() {
+        return estAssociesByNumobjectif;
+    }
+
+    public void setEstAssociesByNumobjectif(Collection<EstAssocie> estAssociesByNumobjectif) {
+        this.estAssociesByNumobjectif = estAssociesByNumobjectif;
+    }
+
+    @OneToMany(mappedBy = "objectifByNumobjectif")
+    public Collection<Fixe> getFixesByNumobjectif() {
+        return fixesByNumobjectif;
+    }
+
+    public void setFixesByNumobjectif(Collection<Fixe> fixesByNumobjectif) {
+        this.fixesByNumobjectif = fixesByNumobjectif;
     }
 }

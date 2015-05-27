@@ -1,10 +1,7 @@
 package modele;
 
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Pierre on 27/05/2015.
@@ -14,6 +11,8 @@ public class Mission {
     private int nummission;
     private int numjeu;
     private String libmission;
+    private Collection<Fixe> fixesByNummission;
+    private Jeu jeuByNumjeu;
 
     @Id
     @Column(name = "NUMMISSION")
@@ -65,5 +64,24 @@ public class Mission {
         result = 31 * result + numjeu;
         result = 31 * result + (libmission != null ? libmission.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "missionByNummission")
+    public Collection<Fixe> getFixesByNummission() {
+        return fixesByNummission;
+    }
+
+    public void setFixesByNummission(Collection<Fixe> fixesByNummission) {
+        this.fixesByNummission = fixesByNummission;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", nullable = false)
+    public Jeu getJeuByNumjeu() {
+        return jeuByNumjeu;
+    }
+
+    public void setJeuByNumjeu(Jeu jeuByNumjeu) {
+        this.jeuByNumjeu = jeuByNumjeu;
     }
 }

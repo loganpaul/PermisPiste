@@ -1,13 +1,7 @@
 package modele;
 
-
+import javax.persistence.*;
 import java.sql.Date;
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
 
 /**
  * Created by Pierre on 27/05/2015.
@@ -20,6 +14,9 @@ public class Obtient {
     private int numaction;
     private Integer valeurdebut;
     private Integer valeurfin;
+    private Calendrier calendrierByDatejour;
+    private Action actionByNumaction;
+    private Apprenant apprenantByNumapprenant;
 
     @Id
     @Column(name = "NUMAPPRENANT")
@@ -95,5 +92,35 @@ public class Obtient {
         result = 31 * result + (valeurdebut != null ? valeurdebut.hashCode() : 0);
         result = 31 * result + (valeurfin != null ? valeurfin.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "DATEJOUR", referencedColumnName = "DATEJOUR", nullable = false)
+    public Calendrier getCalendrierByDatejour() {
+        return calendrierByDatejour;
+    }
+
+    public void setCalendrierByDatejour(Calendrier calendrierByDatejour) {
+        this.calendrierByDatejour = calendrierByDatejour;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", nullable = false)
+    public Action getActionByNumaction() {
+        return actionByNumaction;
+    }
+
+    public void setActionByNumaction(Action actionByNumaction) {
+        this.actionByNumaction = actionByNumaction;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMAPPRENANT", referencedColumnName = "NUMAPPRENANT", nullable = false)
+    public Apprenant getApprenantByNumapprenant() {
+        return apprenantByNumapprenant;
+    }
+
+    public void setApprenantByNumapprenant(Apprenant apprenantByNumapprenant) {
+        this.apprenantByNumapprenant = apprenantByNumapprenant;
     }
 }

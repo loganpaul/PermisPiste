@@ -1,10 +1,7 @@
 package modele;
 
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Pierre on 27/05/2015.
@@ -14,6 +11,7 @@ public class Regle {
     private int numregle;
     private String libregle;
     private Integer scoremin;
+    private Collection<Possede> possedesByNumregle;
 
     @Id
     @Column(name = "NUMREGLE")
@@ -65,5 +63,14 @@ public class Regle {
         result = 31 * result + (libregle != null ? libregle.hashCode() : 0);
         result = 31 * result + (scoremin != null ? scoremin.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "regleByNumregle")
+    public Collection<Possede> getPossedesByNumregle() {
+        return possedesByNumregle;
+    }
+
+    public void setPossedesByNumregle(Collection<Possede> possedesByNumregle) {
+        this.possedesByNumregle = possedesByNumregle;
     }
 }

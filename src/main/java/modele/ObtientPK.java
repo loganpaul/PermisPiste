@@ -1,10 +1,9 @@
 package modele;
 
-import java.io.Serializable;
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
+import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created by Pierre on 27/05/2015.

@@ -1,9 +1,6 @@
 package modele;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 
 /**
  * Created by Pierre on 27/05/2015.
@@ -13,6 +10,8 @@ import javax.persistence.IdClass;
 public class Appartient {
     private int numjeu;
     private int numaction;
+    private Action actionByNumaction;
+    private Jeu jeuByNumjeu;
 
     @Id
     @Column(name = "NUMJEU")
@@ -52,5 +51,25 @@ public class Appartient {
         int result = numjeu;
         result = 31 * result + numaction;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMACTION", referencedColumnName = "NUMACTION", nullable = false)
+    public Action getActionByNumaction() {
+        return actionByNumaction;
+    }
+
+    public void setActionByNumaction(Action actionByNumaction) {
+        this.actionByNumaction = actionByNumaction;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "NUMJEU", referencedColumnName = "NUMJEU", nullable = false)
+    public Jeu getJeuByNumjeu() {
+        return jeuByNumjeu;
+    }
+
+    public void setJeuByNumjeu(Jeu jeuByNumjeu) {
+        this.jeuByNumjeu = jeuByNumjeu;
     }
 }
