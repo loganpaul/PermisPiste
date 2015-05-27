@@ -6,29 +6,21 @@ import modele.Apprenant;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import persistance.dao.IApprenantDao;
+import utils.SessionHibernate;
 
 
 public class ApprenantDaoImpl implements IApprenantDao{
 
-	private SessionFactory	sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-	
 	@Override
 	public List<Apprenant> getAllApprenant() {
-		
-		Session currentSession = this.sessionFactory.openSession();
+		Session currentSession = SessionHibernate.openSession();
 		Query query = currentSession.createQuery("from Apprenant");
 		List<Apprenant> apprenants = query.list();
-		currentSession.close();
+		SessionHibernate.closeSession();
 
 		return apprenants;
-
 	}
 
 	@Override
