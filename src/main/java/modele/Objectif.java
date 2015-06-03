@@ -53,7 +53,7 @@ public class Objectif {
         return result;
     }
 
-    @OneToMany(mappedBy = "objectifByNumobjectif")
+    @OneToMany(mappedBy = "objectifByNumobjectif", cascade=CascadeType.ALL)
     public Collection<EstAssocie> getEstAssociesByNumobjectif() {
         return estAssociesByNumobjectif;
     }
@@ -62,7 +62,7 @@ public class Objectif {
         this.estAssociesByNumobjectif = estAssociesByNumobjectif;
     }
 
-    @OneToMany(mappedBy = "objectifByNumobjectif")
+    @OneToMany(mappedBy = "objectifByNumobjectif", cascade=CascadeType.ALL)
     public Collection<Fixe> getFixesByNumobjectif() {
         return fixesByNumobjectif;
     }

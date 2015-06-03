@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/permispiste</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="modele.Action"/>
+    <mapping class="modele.Appartient"/>
+    <mapping class="modele.Apprenant"/>
+    <mapping class="modele.Calendrier"/>
+    <mapping class="modele.EstAssocie"/>
+    <mapping class="modele.Fixe"/>
+    <mapping class="modele.Indicateur"/>
+    <mapping class="modele.Jeu"/>
+    <mapping class="modele.Mission"/>
+    <mapping class="modele.Objectif"/>
+    <mapping class="modele.Obtient"/>
+    <mapping class="modele.Possede"/>
+    <mapping class="modele.Regle"/>
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

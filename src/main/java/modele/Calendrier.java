@@ -1,9 +1,6 @@
 package modele;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
 
@@ -42,7 +39,7 @@ public class Calendrier {
         return datejour != null ? datejour.hashCode() : 0;
     }
 
-    @OneToMany(mappedBy = "calendrierByDatejour")
+    @OneToMany(mappedBy = "calendrierByDatejour", cascade= CascadeType.ALL)
     public Collection<Obtient> getObtientsByDatejour() {
         return obtientsByDatejour;
     }

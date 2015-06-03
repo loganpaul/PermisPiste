@@ -67,7 +67,7 @@ public class Apprenant {
         return result;
     }
 
-    @OneToMany(mappedBy = "apprenantByNumapprenant")
+    @OneToMany(mappedBy = "apprenantByNumapprenant", cascade=CascadeType.ALL)
     public Collection<Obtient> getObtientsByNumapprenant() {
         return obtientsByNumapprenant;
     }

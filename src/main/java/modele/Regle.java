@@ -65,7 +65,7 @@ public class Regle {
         return result;
     }
 
-    @OneToMany(mappedBy = "regleByNumregle")
+    @OneToMany(mappedBy = "regleByNumregle", cascade=CascadeType.ALL)
     public Collection<Possede> getPossedesByNumregle() {
         return possedesByNumregle;
     }
