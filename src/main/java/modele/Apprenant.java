@@ -1,20 +1,21 @@
 package modele;
 
-import javax.persistence.*;
-import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
- * Created by Pierre on 27/05/2015.
+ * Created by Pierre on 03/06/2015.
  */
 @Entity
 public class Apprenant {
     private int numapprenant;
     private String nomapprenant;
     private String prenomapprenant;
-    private Collection<Obtient> obtientsByNumapprenant;
 
     @Id
-    @Column(name = "NUMAPPRENANT")
+    @Column(name = "NUMAPPRENANT", nullable = false, insertable = true, updatable = true)
     public int getNumapprenant() {
         return numapprenant;
     }
@@ -24,7 +25,7 @@ public class Apprenant {
     }
 
     @Basic
-    @Column(name = "NOMAPPRENANT")
+    @Column(name = "NOMAPPRENANT", nullable = true, insertable = true, updatable = true, length = 25)
     public String getNomapprenant() {
         return nomapprenant;
     }
@@ -34,7 +35,7 @@ public class Apprenant {
     }
 
     @Basic
-    @Column(name = "PRENOMAPPRENANT")
+    @Column(name = "PRENOMAPPRENANT", nullable = true, insertable = true, updatable = true, length = 25)
     public String getPrenomapprenant() {
         return prenomapprenant;
     }
@@ -65,14 +66,5 @@ public class Apprenant {
         result = 31 * result + (nomapprenant != null ? nomapprenant.hashCode() : 0);
         result = 31 * result + (prenomapprenant != null ? prenomapprenant.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "apprenantByNumapprenant", cascade=CascadeType.ALL)
-    public Collection<Obtient> getObtientsByNumapprenant() {
-        return obtientsByNumapprenant;
-    }
-
-    public void setObtientsByNumapprenant(Collection<Obtient> obtientsByNumapprenant) {
-        this.obtientsByNumapprenant = obtientsByNumapprenant;
     }
 }

@@ -18,28 +18,28 @@
 	<bean id="hibernate3AnnotatedSessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-<!-- 		<property name="annotatedClasses"> -->
-<!-- 			<list> -->
-<!-- 				<value>modele.Action</value> -->
-<!-- 				<value>modele.Appartient</value> -->
-<!-- 				<value>modele.AppartientPK</value> -->
-<!-- 				<value>modele.Apprenant</value> -->
-<!-- 				<value>modele.Calendrier</value> -->
-<!-- 				<value>modele.EstAssocie</value> -->
-<!-- 				<value>modele.EstAssociePK</value> -->
-<!-- 				<value>modele.Fixe</value> -->
-<!-- 				<value>modele.FixePK</value> -->
-<!-- 				<value>modele.Indicateur</value> -->
-<!-- 				<value>modele.Jeu</value> -->
-<!-- 				<value>modele.Mission</value> -->
-<!-- 				<value>modele.Objectif</value> -->
-<!-- 				<value>modele.Obtient</value> -->
-<!-- 				<value>modele.ObtientPK</value> -->
-<!-- 				<value>modele.Possede</value> -->
-<!-- 				<value>modele.PossedePK</value> -->
-<!-- 				<value>modele.Regle</value> -->
-<!-- 			</list> -->
-<!-- 		</property> -->
+ 		<property name="annotatedClasses">
+ 			<list>
+ 				<!--<value>modele.Action</value>
+ 				<value>modele.Appartient</value>-->
+ 				<!--<value>modele.AppartientPK</value>-->
+ 				<value>modele.Apprenant</value>
+ 				<!--<value>modele.Calendrier</value>
+ 				<value>modele.EstAssocie</value>
+ 				&lt;!&ndash;<value>modele.EstAssociePK</value>&ndash;&gt;
+ 				<value>modele.Fixe</value>
+ 				&lt;!&ndash;<value>modele.FixePK</value>&ndash;&gt;
+ 				<value>modele.Indicateur</value>
+ 				<value>modele.Jeu</value>
+ 				<value>modele.Mission</value>
+ 				<value>modele.Objectif</value>
+ 				<value>modele.Obtient</value>
+ 				&lt;!&ndash;<value>modele.ObtientPK</value>&ndash;&gt;
+ 				<value>modele.Possede</value>
+ 				&lt;!&ndash;<value>modele.PossedePK</value>&ndash;&gt;
+ 				<value>modele.Regle</value>-->
+ 			</list>
+ 		</property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
@@ -53,7 +53,6 @@
 
 <!-- bean des DAO -->
 	<bean id="apprenantDAO" class="persistance.dao.impl.ApprenantDaoImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
 	</bean>
 
 <!-- exemple de bean pur un service -->
