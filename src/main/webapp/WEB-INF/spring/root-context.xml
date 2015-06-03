@@ -53,7 +53,6 @@
 
 <!-- bean des DAO -->
 	<bean id="apprenantDAO" class="persistance.dao.impl.ApprenantDaoImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
 	</bean>
 
 <!-- exemple de bean pur un service -->

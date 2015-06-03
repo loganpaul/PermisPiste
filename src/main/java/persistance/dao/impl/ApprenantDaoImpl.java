@@ -12,17 +12,14 @@ import persistance.dao.IApprenantDao;
 import utils.SessionHibernate;
 
 public class ApprenantDaoImpl implements IApprenantDao {
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
 
 	@Override
 	public List<Apprenant> getAllApprenant() {
-		Session currentSession = this.sessionFactory.openSession();
+
+		Session currentSession = new SessionHibernate().openSession();
 		Query query = currentSession.createQuery("from Apprenant");
 		List<Apprenant> apprenants = query.list();
+		System.out.println(apprenants);
 		SessionHibernate.closeSession();
 
 		return apprenants;
