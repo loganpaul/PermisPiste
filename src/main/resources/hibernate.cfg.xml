@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="SessionFactory">
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">epul</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/permispiste</property>
+		<property name="hibernate.connection.username">userepul</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<mapping resource="Action.hbm.xml" />
+		<mapping resource="Apprenant.hbm.xml" />
+		<mapping resource="Jeu.hbm.xml" />
+		<mapping resource="Objectif.hbm.xml" />
+		<mapping resource="Calendrier.hbm.xml" />
+		<mapping resource="Regle.hbm.xml" />
+		<mapping resource="Obtient.hbm.xml" />
+		<mapping resource="Mission.hbm.xml" />
+		<mapping resource="Indicateur.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

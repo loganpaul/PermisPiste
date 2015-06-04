@@ -12,7 +12,9 @@ public class SessionHibernate {
     private static SessionFactory sessionFactory;
 
     public SessionHibernate(){
-        sessionFactory = new Configuration().configure().buildSessionFactory();
+        sessionFactory = new Configuration()
+                .configure()
+                .buildSessionFactory();
     }
 
     public static Session openSession(){
