@@ -24,10 +24,11 @@ public class ApprenantController {
 	 * récupérer la liste de tous les apprenant
 	 * @return liste des apprenant
 	 */
-	@RequestMapping(value = "/pouet", method = RequestMethod.GET, produces ={"application/json"})
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces ={"application/json"})
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
 	public List<Apprenant> getAllApprenant() {
+		System.out.println("Je passe dans le controleur");
 		return apprenantService.getAllApprenant();
 	}
 
