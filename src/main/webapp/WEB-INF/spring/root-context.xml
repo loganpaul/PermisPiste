@@ -52,13 +52,12 @@
 <!-- Declaration des bean pour l'injection via annotation @Autowired -->
 
 <!-- bean des DAO -->
-	<bean id="apprenantDAO" class="persistance.dao.impl.ApprenantDaoImpl">
+	<bean id="apprenantDAO" class="com.epul.permisPiste.persistance.dao.impl.ApprenantDaoImpl">
 	</bean>
 
 <!-- exemple de bean pur un service -->
-<!-- 	<bean id="catalogueService" class="com.epul.ergosum.service.CatalogueServiceImpl"> -->
-<!-- 		<property name="catalogueDAO" ref="catalogueDAO" /> -->
-<!-- 		<property name="comporteDAO" ref="comporteDAO" /> -->
-<!-- 	</bean> -->
+	<bean id="apprenantService" class="com.epul.permisPiste.service.impl.ApprenantServiceImpl">
+		<property name="apprenantDAO" ref="apprenantDAO" />
+	</bean>
 
 </beans>

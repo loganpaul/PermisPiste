@@ -1,4 +1,4 @@
-package modele;
+package com.epul.permisPiste.modele;
 
 // Generated 3 juin 2015 11:48:35 by Hibernate Tools 4.3.1
 

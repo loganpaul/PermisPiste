@@ -26,7 +26,5 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<!-- <beans:value>1</beans:value> -->
 	<!-- </beans:property> -->
 	<!-- </beans:bean> -->
-	<context:component-scan base-package="modele" />
-	<context:component-scan base-package="controleur" />
-	<context:component-scan base-package="metier" />
+	<context:component-scan base-package="com.epul.permisPiste.*"/>
 </beans:beans>

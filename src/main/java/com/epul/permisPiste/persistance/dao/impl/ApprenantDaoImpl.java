@@ -1,15 +1,13 @@
-package persistance.dao.impl;
+package com.epul.permisPiste.persistance.dao.impl;
 
 import java.util.List;
 
-import modele.Apprenant;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
-import persistance.dao.IApprenantDao;
-import utils.SessionHibernate;
+import com.epul.permisPiste.modele.Apprenant;
+import com.epul.permisPiste.persistance.dao.IApprenantDao;
+import com.epul.permisPiste.utils.SessionHibernate;
 
 public class ApprenantDaoImpl implements IApprenantDao {
 
@@ -43,4 +41,12 @@ public class ApprenantDaoImpl implements IApprenantDao {
 		return false;
 	}
 
+	@Override
+	public boolean modifyApprenant(Apprenant apprenant) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	
 }

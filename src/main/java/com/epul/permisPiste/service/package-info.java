@@ -5,4 +5,4 @@
  * @author Laura
  *
  */
-package metier;
+package com.epul.permisPiste.service;

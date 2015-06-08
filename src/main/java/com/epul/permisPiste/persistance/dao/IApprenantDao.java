@@ -1,8 +1,8 @@
-package persistance.dao;
+package com.epul.permisPiste.persistance.dao;
 
 import java.util.List;
 
-import modele.Apprenant;
+import com.epul.permisPiste.modele.Apprenant;
 
 public interface IApprenantDao {
 
@@ -32,5 +32,13 @@ public interface IApprenantDao {
 	 * @return true si l'ajout a fonctioné false sinon
 	 */
 	public boolean addApprenant(Apprenant apprenant);
+	
+	/**
+	 * Modifie l'apprenant possedant cet ID avec les nouvelles informations
+	 * Si l'ID n'existe pas en BDD, on ne fait rien
+	 * @param apprenant l'apprenant modifié
+	 * @return true si a modification a eu lieu, false sinon
+	 */
+	public boolean modifyApprenant(Apprenant apprenant);
 	
 }
